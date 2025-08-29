@@ -1,6 +1,6 @@
 ##  Experimental Design & Objectives
 
-This section summarizes the five main experiments conducted on **Property Graphs (PG)** and **Reified Property Graphs (RPG)** using **CozoDB** and **Neo4j**.
+This section summarizes the six main experiments conducted on **Property Graphs (PG)**, **Reified Property Graphs (RPG)** and **Higher Order Graph Database (HOGDB)** using **CozoDB** and **Neo4j**.
 
 ---
 
@@ -68,16 +68,17 @@ This section summarizes the five main experiments conducted on **Property Graphs
   Explore the effect of **increasing abstraction depth** on query execution times.
 
 ---
-###  Experiment 6: RPG vs. HOGDB  (RPG)
+###  Experiment 6: RPG vs. HOGDB 
 
 - **Database**:
-  - Fixed-size (from [`/_3_RPG_HOGDB`](./_3_RPG_HOGDB))
+  - Fixed-size (from [`/_3_RPG_HOGDB`](._3_RPG_HOGDB))
 
 - **Variation**:
- - Number of **reified nodes** in the RPG
- - Number of **subgraph collections** in the HOGDB
+  - Number of **reified nodes** in the RPG
+  - Number of **subgraph collections** in the HOGDB
+
 - **Objective**:  
-  Explore the effect of **increasing the number of the reified nodes/subgraph collections** on query execution times.
+  Explore the effect of **increasing number of reified nodes/subgraph collections** on query execution times.
 
 ---
 
