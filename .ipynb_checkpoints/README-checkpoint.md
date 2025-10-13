@@ -25,16 +25,14 @@ A multi-level abstraction occurs when a reified node or edge contains other reif
 
 ## Implementation
 
-We apply our model to the **Social Network Benchmark (SNB)** as follows:
-
-1. **Data Transformation:**
-   - Convert SNB data into **Cozo scripts** to construct a Property Graph (PG) in [CozoDB](https://cozodb.org)
-   - Also convert SNB data into **CSV files** compatible with Neo4j
+1. **Data Benchmarking:**
+   - Generate graph data into **Cozo scripts** to construct a standard Property Graph (PG) in [CozoDB](https://cozodb.org)
+   - Also convert same data into **CSV files** compatible with Neo4j
 
 2. **Performance Benchmarking:**
 
    a. *Property Graph Comparison*  
-   - Compare **execution time** of equivalent queries on both **Neo4j PG** and **Cozo PG**
+   - Compare **execution time** of equivalent queries on both PG in **Neo4j** and **CozoDB**
 
    b. *Reified Property Graph Evaluation*  
    - Extend the Cozo PG to a **Reified Property Graph (RPG)** by:
@@ -44,6 +42,9 @@ We apply our model to the **Social Network Benchmark (SNB)** as follows:
      - The number of reified nodes
      - The number of reified edges
      - The depth of nested abstractions
+       
+   c. *Reified Property Graph Comparison*
+   - Compare **execution time** and **database insertions** of equivalent queries on both **RPG** and **HO-GDB**
 
 ---
 
@@ -51,10 +52,12 @@ We apply our model to the **Social Network Benchmark (SNB)** as follows:
 
 | Folder                          | Description                                                                 |
 |---------------------------------|-----------------------------------------------------------------------------|
-| [`/Benchmark`](./Benchmark)     | Link to the original SNB dataset and scripts to transform it into Cozo PG  |
-| [`/_1_PG_cozo_neo4j`](./_1_PG_cozo_neo4j) | Scripts to convert the Cozo PG into CSV files for Neo4j                  |
-| [`/_2_RPG_cozo`](./_2_RPG_cozo) | Scripts to upgrade the Cozo PG into a **Reified Property Graph (RPG)**     |
-| [`/_3_Queries_Results`](./_3_Queries_Results) | Query scripts, experimental results, and benchmark graphs              |
+| [`/_1_Workloads Design & Objectives`](./_1_Workloads_Design_&_Objectives)| Explain the senario of each workload and its objective|
+| [`/_2_Benchmark_PG_CozoDB`](./_2_Benchmark_PG_CozoDB)     | Generate graph data into Cozo scripts to build a standard PG in cozoDB|
+| [`/_3_PG_from_cozoDB_to_Neo4j`](./_3_PG_from_cozoDB_to_Neo4j) | Scripts to convert Cozo scripts into CSV files for Neo4j                  |
+| [`/_4_RPG_cozoDB`](./_4_RPG_cozoDB) | Scripts to upgrade the standard PG into a Reified Property Graph (RPG)     |
+| [`/_5_RPG_HOGDB`](./_5_RPG_HOGDB) | Scripts to convert Cozo scripts of an RPG into  HO-GDB    |
+| [`/_6_Queries_&_Results`](./_6_Queries_&_Results) | Query scripts and experimental results             |
 
 ---
 
@@ -62,10 +65,12 @@ We apply our model to the **Social Network Benchmark (SNB)** as follows:
 
 To get started:
 
-1. Follow the setup instructions in [`/Benchmark`](./Benchmark)
-2. Load the PG into Neo4j using the CSV files from [`/_1_PG_cozo_neo4j`](./_1_PG_cozo_neo4j)
-3. Add reified abstractions with [`/_2_RPG_cozo`](./_2_RPG_cozo)
-4. Analyze performance in [`/_3_Queries_Results`](./_3_Queries_Results)
+1. have a look on workloads design and their objectives in [`/_1_Workloads Design & Objectives`](./_1_Workloads_Design_&_Objectives)
+2. Follow the setup instructions in [`/_2_Benchmark_PG_CozoDB`](./_2_Benchmark_PG_CozoDB) to get the standard PG in cozoDB
+3. Load the standrd PG into Neo4j using the CSV files from [`/_3_PG_from_cozoDB_to_Neo4j`](./_3_PG_from_cozoDB_to_Neo4j)
+4. Add reified elments with [`/_4_RPG_cozoDB`](./_4_RPG_cozoDB)
+5. Use the standard PG in Neo4j and add subgraph nodes to get a HO-GDB using [`/_5_RPG_HOGDB`](./_5_RPG_HOGDB) 
+6. Analyze performance using queries in [`/_6_Queries_&_Results`](./_6_Queries_&_Results)
 
 ---
 ## How to Cite This Work
