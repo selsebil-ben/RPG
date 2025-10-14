@@ -6,7 +6,7 @@ Our model is an **extension of the Property Graph model** that introduces:
 
 - **Reified nodes**
 - **Reified edges**
-- **Nested levels of abstraction**
+- **Multi-level abstraction**
 - **Operators** to create and query them
 
 A **reified node** or **reified edge** is a representation of a **subgraph** composed of nodes, edges, their labels, and properties.  
